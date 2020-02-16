@@ -6,8 +6,8 @@
 //    section"what can go wrong"
 //
 
-#ifndef WindowInterface_HPP
-#define WindowInterface_HPP
+#ifndef static_WindowInterface_HPP
+#define static_WindowInterface_HPP
 
 
 // system

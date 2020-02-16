@@ -18,11 +18,17 @@ cmake_minimum_required(VERSION 3.14.6)
 set(LIBRARY_NAME "zelig_static_interface")
 set(LIBRARY_DESCRIPTION "Implementation of static interface in C++")
 set(LIBRARY_FILES
-    _src/src/WindowInterface.hpp
-    _src/src/WindowInterface.cpp
+    _src/static/WindowInterface.hpp
+    _src/static/WindowInterface.cpp
 
-    _src/src/WindowImpl.hpp
-    _src/src/WindowImpl.cpp
+    _src/static/WindowImpl.hpp
+    _src/static/WindowImpl.cpp
+
+    _src/dynamic/WindowInterface.hpp
+    _src/dynamic/WindowInterface.cpp
+
+    _src/dynamic/WindowImpl.hpp
+    _src/dynamic/WindowImpl.cpp
 )
 set(TEST_NAME "zelig_static_interface_test")
 set(TEST_FILES
@@ -33,6 +39,12 @@ set(TEST_FILES
 # Set Standart
 #
 set(CXX_STANDARD 17)
+
+#
+# remove optimization
+#
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O0")
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -O0")
 
 #
 # Set Project
@@ -67,7 +79,7 @@ add_library(${LIBRARY_NAME} SHARED
 set_target_properties(${LIBRARY_NAME} PROPERTIES
     VERSION ${PROJECT_VERSION}
     SOVERSION 1
-    PUBLIC_HEADER _src/src/WindowImpl.hpp
+    PUBLIC_HEADER _src/static/WindowImpl.hpp
     )
 target_include_directories(${LIBRARY_NAME} PRIVATE .)
 

@@ -2,8 +2,8 @@
 // Author: Omer Zelig
 //
 
-#ifndef WindowImpl_HPP
-#define WindowImpl_HPP
+#ifndef static_WindowImpl_HPP
+#define static_WindowImpl_HPP
 
 #include "WindowInterface.hpp"
 
