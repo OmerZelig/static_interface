@@ -20,6 +20,9 @@ set(LIBRARY_DESCRIPTION "Implementation of static interface in C++")
 set(LIBRARY_FILES
     _src/src/WindowInterface.hpp
     _src/src/WindowInterface.cpp
+
+    _src/src/WindowImpl.hpp
+    _src/src/WindowImpl.cpp
 )
 set(TEST_NAME "zelig_static_interface_test")
 set(TEST_FILES
@@ -64,7 +67,7 @@ add_library(${LIBRARY_NAME} SHARED
 set_target_properties(${LIBRARY_NAME} PROPERTIES
     VERSION ${PROJECT_VERSION}
     SOVERSION 1
-    PUBLIC_HEADER _src/src/WindowInterface.hpp
+    PUBLIC_HEADER _src/src/WindowImpl.hpp
     )
 target_include_directories(${LIBRARY_NAME} PRIVATE .)
 
